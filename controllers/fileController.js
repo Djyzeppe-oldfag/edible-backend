@@ -9,7 +9,7 @@ const pathToLink = (path) => {
         path = path.replace("\\", "/")
     } while (path.indexOf("\\") != -1)
 
-    return path.replace(process.env.APP_ROOT_FOLDER, "");
+    return path.replace("/var/www", "");
 };
 
 const parseFormData = (ctx, folder) => (

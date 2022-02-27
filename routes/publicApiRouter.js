@@ -1,10 +1,24 @@
 const Router = require("koa-router");
-const caseController = require("../controllers/caseController");
+const boxController = require("../controllers/boxController");
+const workerController = require("../controllers/workerController");
+const categoryController = require("../controllers/categoryController");
 
 const router = new Router().prefix("/api");
 
 //case
-router.get("/case/getList", caseController.getList);
-router.get("/case/get/:id", caseController.get);
+router.get("/box/getList", boxController.getList);
+router.get("/box/get/:id", boxController.get);
+router.post("/box/create", boxController.create);
+
+//worker
+router.get("/worker/getList", workerController.getList);
+router.get("/worker/get/:id", workerController.get);
+router.post("/worker/create", workerController.create);
+
+//category
+router.get("/category/getList", categoryController.getList);
+router.get("/category/get/:id", categoryController.get);
+router.post("/category/create", categoryController.create);
+
 
 module.exports = router.routes();
