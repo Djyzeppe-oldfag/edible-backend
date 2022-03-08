@@ -2,6 +2,7 @@ const Router = require("koa-router");
 const boxController = require("../controllers/boxController");
 const workerController = require("../controllers/workerController");
 const categoryController = require("../controllers/categoryController");
+const supportController = require("../controllers/supportController");
 
 const router = new Router().prefix("/api");
 
@@ -19,6 +20,9 @@ router.post("/worker/create", workerController.create);
 router.get("/category/getList", categoryController.getList);
 router.get("/category/get/:id", categoryController.get);
 router.post("/category/create", categoryController.create);
+
+//support
+router.post("/support/create", supportController.create);
 
 
 module.exports = router.routes();
